@@ -1,0 +1,15 @@
+Package: migration
+Title: Qucik and easy way to migrate all packages to new computer. 
+Version: 0.0.0.9000
+Authors@R: 
+    person("Kevin", "Navarrete-Parra", , "navark4@unlv.nevada.edu", role = c("aut", "cre"),
+           )
+Description: This package provides functions to quickly and easily migrate all user-installed packages from one computer to another. To use this package effectively, you should download it on both computers so you can get a list of packages from the original computer and download them in bulk on the new computer. 
+License: usethis:use_mit_license("migration")
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: utils
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
