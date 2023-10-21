@@ -20,6 +20,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(migration)
-## basic example code
+get_packages("package_list.txt")
 ```
 
+You would first run `get_packages` on your original computer to retreive a list of your user-installed packages. 
