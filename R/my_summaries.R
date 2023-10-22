@@ -29,17 +29,3 @@ bulk_install <- function(file_path) {
 #' setwd("~/Downloads")
 #' bulk_install("package_list.txt")
 
-# Load the required library
-library(rstudioapi)
-
-# Define a function to retrieve RStudio global options and save them to a file
-save_rstudio_options <- function(file_name) {
-  # Get RStudio global options
-  options_data <- rstudioapi::getGlobalOptions()
-
-  # Save the options to a file in the working directory
-  writeLines(paste(names(options_data), options_data, sep = " = "), file_name)
-}
-
-# Call the function with the desired file name
-save_rstudio_options("RStudio_Global_Options.txt")
