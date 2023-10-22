@@ -28,4 +28,6 @@ bulk_install <- function(file_path) {
 #' @examples
 #' setwd("~/Downloads")
 #' bulk_install("package_list.txt")
+#'
+#'  @import utils
 
