@@ -2,6 +2,7 @@
 
 export(bulk_install)
 export(get_packages)
+export(git_active)
 importFrom(utils,install.packages)
 importFrom(utils,installed.packages)
 importFrom(utils,read.table)
