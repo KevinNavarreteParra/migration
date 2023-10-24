@@ -1,5 +1,7 @@
 test_that("git_active function works as expected", {
 
+  orig_wd <- getwd()
+
   # Test 1: When the git repository is active
   expect_true({
     tempdir <- tempdir()
@@ -20,4 +22,5 @@ test_that("git_active function works as expected", {
     !isActive
   })
 
+  setwd(orig_wd)
 })
