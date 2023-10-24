@@ -18,7 +18,7 @@ test_that("git_active function detects git = TRUE", {
 
 test_that("git_active function detects git = FALSE", {
   # Test 2: When the git repository is not active
-  expect_false({
+  captured_output <- capture.output({
     temp_dir <- tempdir()
     old_dir <- setwd(temp_dir)
 
@@ -33,4 +33,10 @@ test_that("git_active function detects git = FALSE", {
     setwd(old_dir)
     !isActive
   })
+
+  # Check if the captured output contains the specific error message
+  expect_true(any(grepl("not a git repository", captured_output)) &&
+                any(grepl("FALSE", captured_output)) &&
+                any(grepl("had status 128", captured_output)))
 })
+
