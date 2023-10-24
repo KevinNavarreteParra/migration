@@ -13,19 +13,24 @@ test_that("git_active function detects git = TRUE", {
     isActive
   })
 
-
   setwd(orig_wd)
 })
 
 test_that("git_active function detects git = FALSE", {
-
   # Test 2: When the git repository is not active
   expect_false({
-    tempdir <- tempdir()
-    setwd(tempdir)
+    temp_dir <- tempdir()
+    old_dir <- setwd(temp_dir)
+
+    # Deactivate git in the temporary directory
+    system("mv .git .git_deactivated 2>/dev/null")
+
     isActive <- git_active()
-    setwd(tempdir)
+
+    # Reactivate git after the test is done
+    system("mv .git_deactivated .git 2>/dev/null")
+
+    setwd(old_dir)
     !isActive
   })
-
 })
