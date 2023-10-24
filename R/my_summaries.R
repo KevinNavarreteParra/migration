@@ -21,6 +21,7 @@ get_packages <- function(file_name) {
 #' @return Runs a bulk installation of all the packages pulled using `get.packages` function
 #' @export
 bulk_install <- function(file_path) {
+  chooseCRANmirror(local.only = TRUE)
   data <- read.table(file_path, sep = ",", header = FALSE)
   pack_vec <- as.vector(unlist(t(as.matrix(data))))
   install.packages(pack_vec)
@@ -29,5 +30,4 @@ bulk_install <- function(file_path) {
 #' setwd("~/Downloads")
 #' bulk_install("package_list.txt")
 #'
-#'  @import utils
 
