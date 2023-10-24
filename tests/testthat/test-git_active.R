@@ -7,6 +7,7 @@ test_that("git_active function works as expected", {
     system("git init")
     isActive <- git_active()
     setwd(tempdir)
+    system("rm -rf .git")  # Remove the Git directory
     isActive
   })
 
@@ -16,7 +17,7 @@ test_that("git_active function works as expected", {
     setwd(tempdir)
     isActive <- git_active()
     setwd(tempdir)
-    isActive
+    !isActive
   })
 
 })
