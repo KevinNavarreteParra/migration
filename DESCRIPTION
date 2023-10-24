@@ -1,5 +1,5 @@
 Package: migration
-Title: Qucik and easy way to migrate all packages to new computer. 
+Title: Qucik and easy way to migrate all packages to new computer
 Version: 0.0.0.9000
 Authors@R: 
     person("Kevin", "Navarrete-Parra", , "navark4@unlv.nevada.edu", role = c("aut", "cre"),
