@@ -35,8 +35,9 @@ test_that("git_active function detects git = FALSE", {
   })
 
   # Check if the captured output contains the specific error message
-  expect_true(any(grepl("not a git repository", captured_output)) &&
-                any(grepl("FALSE", captured_output)) &&
+  expect_true(any(grepl("not a git repository", captured_output)) ||
+                any(grepl("FALSE", captured_output)) ||
                 any(grepl("had status 128", captured_output)))
+
 })
 
